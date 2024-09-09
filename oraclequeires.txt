@@ -1,0 +1,61 @@
+DROP TABLE CBSDATA.EMPLOYEE;
+
+CREATE TABLE CBSDATA.EMPLOYEE (
+    EMPLOYEE_ID NUMBER(10,0) NOT NULL,
+    name VARCHAR2(100) NOT NULL
+);
+
+
+INSERT INTO CBSDATA.EMPLOYEE (EMPLOYEE_ID, name) VALUES (21, 'qqzbasAlice Brown');
+INSERT INTO CBSDATA.EMPLOYEE (EMPLOYEE_ID, name) VALUES (22, 'qqzbasBob White');
+INSERT INTO CBSDATA.EMPLOYEE (EMPLOYEE_ID, name) VALUES (23, 'qqzbasCarol Green');
+INSERT INTO CBSDATA.EMPLOYEE (EMPLOYEE_ID, name) VALUES (24, 'qqzbasCarol Green');
+INSERT INTO CBSDATA.EMPLOYEE (EMPLOYEE_ID, name) VALUES (26, 'qqzbasAlice Brown');
+
+
+
+
+
+
+
+
+select * from employee;
+
+
+
+
+
+
+CREATE TABLE ifinixemployee (
+    id NUMBER PRIMARY KEY,
+    emplyee_id Number  
+                  -- Primary key (manual increment through sequence)
+    name VARCHAR2(100) NOT NULL,            -- Employee name (cannot be NULL)
+    position VARCHAR2(100) NOT NULL,        -- Employee position (cannot be NULL)
+    salary NUMBER(10, 2) NOT NULL,          -- Employee salary (cannot be NULL)
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL -- Timestamp for tracking updates (cannot be NULL)
+);
+
+select * from ifinixemployee;
+
+CREATE SEQUENCE ifinixemployee_seq
+    START WITH 1
+    INCREMENT BY 1
+    NOCACHE;
+
+
+CREATE TRIGGER ifinixemployee_trigger
+BEFORE INSERT ON ifinixemployee
+FOR EACH ROW
+BEGIN
+    IF :NEW.id IS NULL THEN
+        SELECT ifinixemployee_seq.NEXTVAL INTO :NEW.id FROM dual;
+    END IF;
+END;
+
+
+INSERT INTO ifinixemployee (id, employee_id, name, position, salary, updated_at) 
+VALUES (1, 101, 'John Doe', 'Software Engineer', 65000, CURRENT_TIMESTAMP);
+
+
+
