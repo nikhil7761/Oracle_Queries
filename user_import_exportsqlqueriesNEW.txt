@@ -1,0 +1,12 @@
+impdp hsmdata/hsmdata@DEVOPS DIRECTORY=import remap_schema=testhsmdata:hsmdata  dumpfile=TESTHSMDATA.dmp logfile=testhsmdata1.log 
+
+
+grant dba to SMSDATA identified by smsdata;   -  to create a user and assign pw to it
+
+
+impdp smsdata/smsdata@DEVOPS DIRECTORY=import remap_schema=testsmsdata:smsdata  dumpfile=TESTSMSDATA.dmp logfile=testsmsdata1
+
+impdp mobiledata/mobiledata@DEVOPS DIRECTORY=import remap_schema=testmobiledata:mobiledata  dumpfile=TESTMOBILEDATA.dmp logfile=testmobiledata1
+
+
+impdp cbsdata/cbsdata@DEVOPSDPL DIRECTORY=import remap_schema=testcbsdata:cbsdata  dumpfile=TESTCBSDATA.dmp logfile=testcbsdata1
