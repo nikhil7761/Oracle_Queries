@@ -60,5 +60,5 @@ END;
 INSERT INTO ifinixemployee (id, employee_id, name, position, salary, updated_at) 
 VALUES (1, 101, 'John Doe', 'Software Engineer', 65000, CURRENT_TIMESTAMP);
 
-
+DROP USER CBSTEST;
 
