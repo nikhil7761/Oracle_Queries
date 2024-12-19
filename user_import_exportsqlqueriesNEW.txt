@@ -10,3 +10,16 @@ impdp mobiledata/mobiledata@DEVOPS DIRECTORY=import remap_schema=testmobiledata:
 
 
 impdp cbsdata/cbsdata@DEVOPSDPL DIRECTORY=import remap_schema=testcbsdata:cbsdata  dumpfile=TESTCBSDATA.dmp logfile=testcbsdata1
+
+
+
+for export particular user from the database oracle
+
+exp banktest/123@ght@ebankaws  file=D:\bkp\banktest1912.dmp
+
+then we have to deploy on the another server
+
+used the imp command
+
+1.imp
+2.Export file  give the path of the above file
