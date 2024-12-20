@@ -1,0 +1,32 @@
+C:\Users\Administrator>sqlplus "/ as sysdba"
+ 
+SQL*Plus: Release 19.0.0.0.0 - Production on Fri Dec 20 10:18:13 2024
+Version 19.3.0.0.0
+ 
+Copyright (c) 1982, 2019, Oracle.  All rights reserved.
+ 
+ 
+Connected to:
+Oracle Database 11g Release 11.2.0.1.0 - 64bit Production
+ 
+SQL> SELECT username, account_status
+  2  FROM dba_users
+  3  WHERE username = 'DAPOLI';
+ 
+USERNAME                       ACCOUNT_STATUS
+------------------------------ --------------------------------
+DAPOLI                         LOCKED(TIMED)
+ 
+SQL> ALTER USER dapoli ACCOUNT UNLOCK;
+ 
+User altered.
+ 
+SQL> SELECT username, account_status
+  2  FROM dba_users
+  3  WHERE username = 'DAPOLI';
+ 
+USERNAME                       ACCOUNT_STATUS
+------------------------------ --------------------------------
+DAPOLI                         OPEN
+ 
+SQL>
