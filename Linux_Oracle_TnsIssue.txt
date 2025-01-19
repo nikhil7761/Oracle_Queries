@@ -13,7 +13,7 @@ listener.ora  samples  shrept.lst  sqlnet.ora  tnsnames.ora
 
 LISTENER_CDB =
   (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))
-
+aad
 
 ORCL =
   (DESCRIPTION =
